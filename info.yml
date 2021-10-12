@@ -1,0 +1,61 @@
+# MIT License
+
+# Copyright (c) 2021 Netherlands Film Academy
+
+# Permission is hereby granted, free of charge, to any person obtaining a copy
+# of this software and associated documentation files (the "Software"), to deal
+# in the Software without restriction, including without limitation the rights
+# to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+# copies of the Software, and to permit persons to whom the Software is
+# furnished to do so, subject to the following conditions:
+
+# The above copyright notice and this permission notice shall be included in all
+# copies or substantial portions of the Software.
+
+# THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+# IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+# FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+# AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+# LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+# OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+# SOFTWARE.
+
+# Metadata defining the behaviour and requirements for this engine
+
+# expected fields in the configuration file for this engine
+
+configuration:
+
+    pipeline_steps:
+        type: list
+        values:
+            type: str
+        allows_empty: True
+        default_value: []
+        description: "Name of the pipeline steps where to apply the templates merging to."
+
+    templates_directory:
+        type: template
+        description: "Location of the directory for the template files."
+
+    file_extension:
+        type: str
+        description: "File extension to use for Houdini Template files."
+        allows_empty: True
+        default_value: ".hip"
+
+
+
+
+requires_shotgun_fields:
+
+display_name: "Houdini Template"
+description: "Merges predefined Houdini files if it is in a specific pipeline step."
+
+requires_shotgun_version:
+requires_core_version: "v0.12.5"
+requires_engine_version: "v1.7.1"
+
+supported_engines: [tk-houdini]
+
+frameworks:

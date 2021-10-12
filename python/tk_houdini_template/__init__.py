@@ -1,0 +1,1 @@
+from .handler import TkHoudiniTemplateHandler
